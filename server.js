@@ -90,7 +90,7 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, nameInfo: uniqueName });
+      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, uniqueName });
     });
   } else {
     res.render('index.html', { pageCountMessage : null, nameInfo: uniqueName});
