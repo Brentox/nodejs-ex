@@ -49,8 +49,9 @@ if (mongoURL == null) {
     mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
   }
 }
-
-var uniqueName = process.env.NAME;
+var initDb = function(callback) {
+   var uniqueName = process.env.NAME;
+  };
 
 var db = null,
     dbDetails = new Object();
