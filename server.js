@@ -51,7 +51,7 @@ if (mongoURL == null) {
 }
 
 var appInfo = new Object();
-appInfo.uniqueName = "test";
+appInfo.uniqueName = process.env.UNIQUE_NAME;
 
 var db = null,
     dbDetails = new Object();
