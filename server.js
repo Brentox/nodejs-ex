@@ -50,7 +50,7 @@ if (mongoURL == null) {
   }
 }
 
-var uniqueName = process.env.TEST;
+var uniqueName = process.env.UNIQUE_NAME;
 
 var db = null,
     dbDetails = new Object();
