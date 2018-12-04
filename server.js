@@ -8,8 +8,6 @@ Object.assign=require('object-assign')
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
-console.log(process.env)
-
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
@@ -81,7 +79,7 @@ app.get('/', function (req, res) {
   if (!db) {
     initDb(function(err){});
   }
-  uniqueName = process.env.NAME;
+  uniqueName = process.env;
   if (db) {
     var col = db.collection('counts');
     // Create a document with request IP and current time of request
