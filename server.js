@@ -49,6 +49,9 @@ if (mongoURL == null) {
     mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
   }
 }
+
+var uniqueName = process.env.NAME;
+
 var db = null,
     dbDetails = new Object();
 
@@ -79,7 +82,6 @@ app.get('/', function (req, res) {
   if (!db) {
     initDb(function(err){});
   }
-  uniqueName = process.env;
   if (db) {
     var col = db.collection('counts');
     // Create a document with request IP and current time of request
