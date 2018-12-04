@@ -79,6 +79,7 @@ app.get('/', function (req, res) {
   if (!db) {
     initDb(function(err){});
   }
+  uniqueName = process.env['NAME''];
   if (db) {
     var col = db.collection('counts');
     // Create a document with request IP and current time of request
@@ -87,10 +88,10 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails });
+      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, info: uniqueName });
     });
   } else {
-    res.render('index.html', { pageCountMessage : null});
+    res.render('index.html', { pageCountMessage : null, info: uniqueName});
   }
 });
 
