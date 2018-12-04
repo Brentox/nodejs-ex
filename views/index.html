@@ -216,7 +216,7 @@ pre {
 
 <section class='container'>
           <hgroup>
-            <h1>Welcome to Instance <%= dbInfo.uniqueName %></h1> 
+            <h1>Welcome to Instance <%= nameInfo.uniqueName %></h1> 
           </hgroup>
 
                 <h2>Request information</h2>
@@ -228,7 +228,7 @@ pre {
                       <table style='margin-left: 20px'>
                           <tr><td>Type:</td><td><%= dbInfo.type %></td></tr>
                           <tr><td>URL:</td><td><%= dbInfo.url %></td></tr>
-                          <tr><td>URL:</td><td><%= dbInfo.uniqueName %></td></tr>
+                          <tr><td>URL:</td><td><%= nameInfo.uniqueName %></td></tr>
                       </table>
                     </div>
                 <% } else { %>
