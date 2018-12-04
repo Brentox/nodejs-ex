@@ -50,7 +50,8 @@ if (mongoURL == null) {
   }
 }
 
-var uniqueName = "test";
+var appInfo = new Object();
+appInfo.uniqueName = "test";
 
 var db = null,
     dbDetails = new Object();
@@ -90,7 +91,7 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, uniqueName });
+      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, info:appInfo });
     });
   } else {
     res.render('index.html', { pageCountMessage : null, nameInfo: uniqueName});
