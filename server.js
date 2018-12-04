@@ -79,7 +79,7 @@ app.get('/', function (req, res) {
   if (!db) {
     initDb(function(err){});
   }
-  uniqueName = process.env['NAME'];
+  uniqueName = process.env.NAME;
   if (db) {
     var col = db.collection('counts');
     // Create a document with request IP and current time of request
