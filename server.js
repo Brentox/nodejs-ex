@@ -49,9 +49,9 @@ if (mongoURL == null) {
     mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
   }
 }
-var initDb = function(callback) {
-   var uniqueName = process.env.NAME;
-  };
+
+var uniqueName = process.env.NAME;
+
 
 var db = null,
     dbDetails = new Object();
@@ -91,10 +91,10 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, info: uniqueName });
+      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, dbInfo:uniqueName });
     });
   } else {
-    res.render('index.html', { pageCountMessage : null, info: uniqueName});
+    res.render('index.html', { pageCountMessage : null, uniqueName});
   }
 });
 
