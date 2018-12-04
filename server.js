@@ -94,7 +94,7 @@ app.get('/', function (req, res) {
       res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, info:appInfo });
     });
   } else {
-    res.render('index.html', { pageCountMessage : null, nameInfo: uniqueName});
+    res.render('index.html', { pageCountMessage : null, info:appInfo});
   }
 });
 
